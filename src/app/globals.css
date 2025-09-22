@@ -100,35 +100,35 @@ Ocean-inspired color palette for WAVE RIDERS surf store
   --container: 1400px;
   --container-center: true;
   --container-padding: 2rem;
-  
+
   /* Color System */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  
+
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  
+
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  
+
   --color-destructive: hsl(var(--destructive));
   --color-destructive-foreground: hsl(var(--destructive-foreground));
-  
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  
+
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  
+
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  
+
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  
+
   --color-sidebar: hsl(var(--sidebar-background));
   --color-sidebar-foreground: hsl(var(--sidebar-foreground));
   --color-sidebar-primary: hsl(var(--sidebar-primary));
@@ -137,12 +137,22 @@ Ocean-inspired color palette for WAVE RIDERS surf store
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
-  
+
+  /* Custom WAVE RIDERS colors for Tailwind */
+  --color-ocean-primary: hsl(var(--ocean-primary));
+  --color-ocean-secondary: hsl(var(--ocean-secondary));
+  --color-sand-light: hsl(var(--sand-light));
+  --color-sand-medium: hsl(var(--sand-medium));
+  --color-coral-accent: hsl(var(--coral-accent));
+
+  /* Additional Orange Shades */
+  --color-orange-400: hsl(25 95% 53%);
+
   /* Border Radius */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
+
   /* Animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -185,28 +195,6 @@ h1, h2, h3, h4, h5, h6 {
   color: hsl(var(--ocean-primary));
 }
 
-/* Wave Divider */
-.wave-divider {
-  position: relative;
-  overflow: hidden;
-}
-
-.wave-divider::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0,15 Q25,5 50,15 T100,15 V25 H0 Z' fill='%23F2E3C9'/%3e%3c/svg%3e") repeat-x;
-  background-size: 100px 20px;
-  animation: wave 3s linear infinite;
-}
-
-@keyframes wave {
-  0% { background-position-x: 0; }
-  100% { background-position-x: 100px; }
-}
 
 /* Button Styles */
 .btn-primary {
@@ -257,6 +245,24 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
+.btn-secondary-hero {
+  background: transparent;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  border: 2px solid white/30;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary-hero:hover {
+  background: white/10;
+  border-color: white/50;
+  transform: translateY(-2px);
+}
+
 /* Product Card Styles */
 .product-card {
   background: white;
@@ -270,6 +276,39 @@ h1, h2, h3, h4, h5, h6 {
 .product-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(26, 62, 95, 0.15);
+}
+
+.product-card-enhanced {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid hsl(var(--border));
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card-enhanced:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(26, 62, 95, 0.2);
+}
+
+.product-card-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(135deg, hsl(var(--ocean-primary)), hsl(var(--coral-accent)));
+  border-radius: inherit;
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  mask-composite: subtract;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.product-card-enhanced:hover::before {
+  opacity: 0.8;
 }
 
 /* Hero Section */

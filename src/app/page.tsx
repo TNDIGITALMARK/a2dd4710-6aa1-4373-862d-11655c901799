@@ -153,37 +153,51 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
         </div>
 
-        <div className="relative z-10 text-center text-white max-w-4xl px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 fade-in">
-            FIND YOUR<br />
-            <span className="text-coral-accent">PERFECT WAVE</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 fade-in opacity-90">
-            Premium Surfboards & Coastal Lifestyle Gear
-          </p>
-          <button className="btn-primary text-lg px-8 py-4 fade-in">
-            Shop Now
-          </button>
+        <div className="relative z-10 text-center text-white max-w-5xl px-4">
+          <div className="space-y-8">
+            <h1 className="text-6xl md:text-8xl font-bold leading-tight fade-in">
+              FIND YOUR<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral-accent to-orange-400">PERFECT WAVE</span>
+            </h1>
+            <p className="text-2xl md:text-3xl mb-12 fade-in opacity-95 font-medium">
+              Premium Surfboards & Coastal Lifestyle Gear
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="btn-primary text-xl px-12 py-5 fade-in transform hover:scale-105 transition-all duration-300">
+                Shop Now
+              </button>
+              <button className="btn-secondary-hero text-xl px-12 py-5 fade-in">
+                View Collection
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Wave Divider */}
-        <div className="absolute bottom-0 w-full wave-divider h-8"></div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-gradient-to-b from-white to-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-ocean-primary mb-4">Featured Products</h2>
-            <p className="text-lg text-gray-600">Discover our top-rated surfboards and gear</p>
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-coral-accent/10 rounded-full mb-4">
+              <span className="text-coral-accent font-semibold text-sm uppercase tracking-wide">Featured Collection</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-ocean-primary mb-6 leading-tight">Featured Products</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Discover our top-rated surfboards and gear, carefully curated for every skill level and wave condition</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="product-card group">
+              <div key={product.id} className="product-card-enhanced group cursor-pointer">
                 {/* Product Badge */}
                 {product.badge && (
                   <div className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-xs font-semibold ${
@@ -196,13 +210,14 @@ export default function HomePage() {
                 )}
 
                 {/* Product Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-72 overflow-hidden rounded-t-xl">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Wishlist Button */}
                   <button
@@ -220,7 +235,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Product Info */}
-                <div className="p-6">
+                <div className="p-8">
                   <p className="text-sm text-gray-500 mb-2">{product.category}</p>
                   <h3 className="font-semibold text-lg text-ocean-primary mb-2">
                     {product.name}
@@ -266,48 +281,55 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-24 bg-gradient-to-b from-muted/30 to-ocean-primary/5">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-ocean-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <ShoppingCart className="w-8 h-8 text-white" />
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-ocean-primary mb-4">Why Choose Wave Riders</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Experience the difference with our commitment to quality and customer satisfaction</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-ocean-primary to-ocean-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-2xl transition-all duration-300">
+                <ShoppingCart className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-ocean-primary">Free Shipping</h3>
-              <p className="text-gray-600">Free shipping on orders over $200</p>
+              <h3 className="text-2xl font-bold mb-4 text-ocean-primary">Free Shipping</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">Complimentary shipping on all orders over $200. Get your gear delivered right to your door.</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-ocean-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-white" />
+            <div className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-ocean-primary to-ocean-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-2xl transition-all duration-300">
+                <Heart className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-ocean-primary">Expert Crafted</h3>
-              <p className="text-gray-600">Handcrafted by professional shapers</p>
+              <h3 className="text-2xl font-bold mb-4 text-ocean-primary">Expert Crafted</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">Each board is handcrafted by professional shapers with decades of experience and passion.</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-ocean-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-white" />
+            <div className="text-center group hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-br from-ocean-primary to-ocean-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-2xl transition-all duration-300">
+                <Star className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-ocean-primary">30-Day Guarantee</h3>
-              <p className="text-gray-600">Not satisfied? Full refund within 30 days</p>
+              <h3 className="text-2xl font-bold mb-4 text-ocean-primary">30-Day Guarantee</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">Not completely satisfied? We offer a full refund within 30 days, no questions asked.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Newsletter Signup */}
-      <section className="hero-section py-12">
+      <section className="hero-section py-20">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold mb-4 text-white">Join the Ocean Community</h3>
-          <p className="text-xl mb-8 text-white/90">Get exclusive deals and surf tips delivered to your inbox</p>
-          <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border-none outline-none"
-            />
-            <button className="btn-coral px-6 py-3">
-              Subscribe
-            </button>
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white">Join the Ocean Community</h3>
+            <p className="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed">Get exclusive deals, surf tips, and be the first to know about new arrivals delivered straight to your inbox</p>
+            <div className="flex flex-col sm:flex-row max-w-lg mx-auto gap-4">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-6 py-4 rounded-xl border-none outline-none text-lg shadow-lg"
+              />
+              <button className="btn-coral px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                Subscribe
+              </button>
+            </div>
+            <p className="text-sm text-white/60 mt-4">No spam, unsubscribe at any time</p>
           </div>
         </div>
       </section>
