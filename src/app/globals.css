@@ -1,39 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
+Ocean-inspired color palette for WAVE RIDERS surf store
 */
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --foreground: 207 53% 21%;  /* Deep Ocean Blue #1A3E5F */
 
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 207 53% 21%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover-foreground: 207 53% 21%;
 
-  --primary: 222.2 47.4% 11.2%;
+  --primary: 207 53% 21%;  /* Deep Ocean Blue #1A3E5F */
   --primary-foreground: 210 40% 98%;
 
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 207 42% 49%;  /* Wave Blue #4A8DB7 */
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 36 33% 86%;  /* Light Sand #F2E3C9 */
+  --muted-foreground: 207 53% 21%;
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --accent: 16 73% 65%;  /* Coral Accent #FF7F50 */
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
   --border: 214.3 31.8% 91.4%;
   --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --ring: 207 42% 49%;  /* Wave Blue for focus rings */
 
   --radius: 0.5rem;
+
+  /* Custom WAVE RIDERS colors */
+  --ocean-primary: 207 53% 21%;    /* #1A3E5F */
+  --ocean-secondary: 207 42% 49%;  /* #4A8DB7 */
+  --sand-light: 36 33% 86%;        /* #F2E3C9 */
+  --sand-medium: 36 22% 78%;       /* #D9C5B4 */
+  --coral-accent: 16 73% 65%;      /* #FF7F50 */
+
+  /* Typography */
+  --font-heading: 'Baloo 2', cursive;
+  --font-body: 'Montserrat', sans-serif;
 
   --sidebar-background: 0 0% 98%;
   --sidebar-foreground: 240 5.3% 26.1%;
@@ -160,4 +173,224 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* WAVE RIDERS Surf Store Specific Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: hsl(var(--ocean-primary));
+}
+
+/* Wave Divider */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-divider::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0,15 Q25,5 50,15 T100,15 V25 H0 Z' fill='%23F2E3C9'/%3e%3c/svg%3e") repeat-x;
+  background-size: 100px 20px;
+  animation: wave 3s linear infinite;
+}
+
+@keyframes wave {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 100px; }
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, hsl(var(--ocean-primary)), hsl(var(--ocean-secondary)));
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(26, 62, 95, 0.3);
+}
+
+.btn-secondary {
+  background: hsl(var(--sand-light));
+  color: hsl(var(--ocean-primary));
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  border: 2px solid hsl(var(--ocean-primary));
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: hsl(var(--ocean-primary));
+  color: white;
+}
+
+.btn-coral {
+  background: hsl(var(--coral-accent));
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-coral:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Product Card Styles */
+.product-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid hsl(var(--border));
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(26, 62, 95, 0.15);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, hsl(var(--ocean-primary)) 0%, hsl(var(--ocean-secondary)) 100%);
+  color: white;
+  padding: 4rem 0;
+}
+
+/* Navigation */
+.nav-link {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: hsl(var(--sand-light));
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: hsl(var(--sand-light));
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Rating Stars */
+.rating-star {
+  color: hsl(var(--coral-accent));
+  font-size: 1.125rem;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Price Display */
+.price {
+  font-weight: 700;
+  color: hsl(var(--ocean-primary));
+}
+
+.price-sale {
+  color: hsl(var(--coral-accent));
+  font-weight: 700;
+}
+
+.price-original {
+  color: hsl(var(--muted-foreground));
+  text-decoration: line-through;
+}
+
+/* Mini Cart */
+.mini-cart {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.mini-cart:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--sand-light));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--ocean-secondary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--ocean-primary));
 }
