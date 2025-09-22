@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-22T02:25:20.480Z",
+  "generatedAt": "2025-09-22T04:37:18.917Z",
   "generatedBy": "Phoenix BuildTimeTrackingManager",
   "version": "1.0.0",
   "assets": [
@@ -7,13 +7,13 @@
       "fileName": "phoenix-tracking.js",
       "type": "js",
       "size": 24498,
-      "hash": "c9bcd2a4c67282f92cc774b81e39b87836bfd8170ccb892b69062a0f3e10c090"
+      "hash": "a4e363609aa44209bed2d0d86fb8d38434ed0f5144762ca10054e234152add17"
     },
     {
       "fileName": "phoenix-tracking.css",
       "type": "css",
       "size": 12077,
-      "hash": "a3e6978acecc62a3c439accc27d9213454805c8a216184f91aa82ca8284bdb76"
+      "hash": "97815924792ed6be4f7f88ebd7e67ed123b1adfe0390518b2dc58998105147be"
     }
   ]
 }
