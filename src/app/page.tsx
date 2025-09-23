@@ -98,7 +98,7 @@ export default function HomePage() {
               <a href="/wetsuits" className="nav-link">Wetsuits</a>
               <a href="#" className="nav-link">Accessories</a>
               <a href="#" className="nav-link">Sale</a>
-              <a href="#" className="nav-link">About</a>
+              <a href="/about" className="nav-link">About</a>
             </div>
 
             {/* Search and Cart */}
@@ -137,7 +137,7 @@ export default function HomePage() {
               <a href="/wetsuits" className="block nav-link py-0.5">Wetsuits</a>
               <a href="#" className="block nav-link py-0.5">Accessories</a>
               <a href="#" className="block nav-link py-0.5">Sale</a>
-              <a href="#" className="block nav-link py-0.5">About</a>
+              <a href="/about" className="block nav-link py-0.5">About</a>
             </div>
           </div>
         )}
@@ -356,7 +356,7 @@ export default function HomePage() {
             <div>
               <h5 className="font-semibold mb-4">Company</h5>
               <ul className="space-y-2 text-white/80">
-                <li><a href="#" className="hover:text-white">About Us</a></li>
+                <li><a href="/about" className="hover:text-white">About Us</a></li>
                 <li><a href="#" className="hover:text-white">Contact</a></li>
                 <li><a href="#" className="hover:text-white">Blog</a></li>
                 <li><a href="#" className="hover:text-white">Reviews</a></li>
