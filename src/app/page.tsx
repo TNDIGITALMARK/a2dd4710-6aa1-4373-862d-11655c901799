@@ -86,14 +86,14 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="hero-section sticky top-0 z-40">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-2">
             {/* Logo */}
-            <div className="text-2xl font-bold text-white">
+            <div className="text-lg font-bold text-white">
               WAVE RIDERS
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-4">
               <a href="/products" className="nav-link">Boards</a>
               <a href="/wetsuits" className="nav-link">Wetsuits</a>
               <a href="#" className="nav-link">Accessories</a>
@@ -102,17 +102,17 @@ export default function HomePage() {
             </div>
 
             {/* Search and Cart */}
-            <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center bg-white/20 rounded-lg px-3 py-2">
-                <Search className="w-4 h-4 text-white mr-2" />
+            <div className="flex items-center space-x-2">
+              <div className="hidden md:flex items-center bg-white/20 rounded-lg px-2 py-1">
+                <Search className="w-3 h-3 text-white mr-1" />
                 <input
                   type="text"
-                  placeholder="Search products..."
-                  className="bg-transparent text-white placeholder-white/70 outline-none text-sm w-40"
+                  placeholder="Search..."
+                  className="bg-transparent text-white placeholder-white/70 outline-none text-xs w-24"
                 />
               </div>
               <button className="relative text-white hover:text-sand-light">
-                <ShoppingCart className="w-6 h-6" />
+                <ShoppingCart className="w-5 h-5" />
                 {cart.length > 0 && (
                   <span className="absolute -top-2 -right-2 bg-coral-accent text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
                     {cart.length}
@@ -123,7 +123,7 @@ export default function HomePage() {
                 className="md:hidden text-white"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
@@ -131,13 +131,13 @@ export default function HomePage() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-black/90 py-4">
-            <div className="container mx-auto px-4 space-y-4">
-              <a href="/products" className="block nav-link py-2">Boards</a>
-              <a href="/wetsuits" className="block nav-link py-2">Wetsuits</a>
-              <a href="#" className="block nav-link py-2">Accessories</a>
-              <a href="#" className="block nav-link py-2">Sale</a>
-              <a href="#" className="block nav-link py-2">About</a>
+          <div className="md:hidden bg-black/90 py-2">
+            <div className="container mx-auto px-4 space-y-2">
+              <a href="/products" className="block nav-link py-1">Boards</a>
+              <a href="/wetsuits" className="block nav-link py-1">Wetsuits</a>
+              <a href="#" className="block nav-link py-1">Accessories</a>
+              <a href="#" className="block nav-link py-1">Sale</a>
+              <a href="#" className="block nav-link py-1">About</a>
             </div>
           </div>
         )}
