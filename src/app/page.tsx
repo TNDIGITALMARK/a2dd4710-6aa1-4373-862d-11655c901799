@@ -94,8 +94,8 @@ export default function HomePage() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="nav-link">Boards</a>
-              <a href="#" className="nav-link">Wetsuits</a>
+              <a href="/products" className="nav-link">Boards</a>
+              <a href="/wetsuits" className="nav-link">Wetsuits</a>
               <a href="#" className="nav-link">Accessories</a>
               <a href="#" className="nav-link">Sale</a>
               <a href="#" className="nav-link">About</a>
@@ -133,8 +133,8 @@ export default function HomePage() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-black/90 py-4">
             <div className="container mx-auto px-4 space-y-4">
-              <a href="#" className="block nav-link py-2">Boards</a>
-              <a href="#" className="block nav-link py-2">Wetsuits</a>
+              <a href="/products" className="block nav-link py-2">Boards</a>
+              <a href="/wetsuits" className="block nav-link py-2">Wetsuits</a>
               <a href="#" className="block nav-link py-2">Accessories</a>
               <a href="#" className="block nav-link py-2">Sale</a>
               <a href="#" className="block nav-link py-2">About</a>
@@ -347,8 +347,8 @@ export default function HomePage() {
             <div>
               <h5 className="font-semibold mb-4">Shop</h5>
               <ul className="space-y-2 text-white/80">
-                <li><a href="#" className="hover:text-white">Surfboards</a></li>
-                <li><a href="#" className="hover:text-white">Wetsuits</a></li>
+                <li><a href="/products" className="hover:text-white">Surfboards</a></li>
+                <li><a href="/wetsuits" className="hover:text-white">Wetsuits</a></li>
                 <li><a href="#" className="hover:text-white">Accessories</a></li>
                 <li><a href="#" className="hover:text-white">Sale</a></li>
               </ul>

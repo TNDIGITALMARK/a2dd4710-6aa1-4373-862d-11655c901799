@@ -392,8 +392,8 @@ export default function ProductsPage() {
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#" className="nav-link">Boards</a>
-              <a href="#" className="nav-link">Wetsuits</a>
+              <span className="nav-link text-sand-light font-semibold">Boards</span>
+              <a href="/wetsuits" className="nav-link">Wetsuits</a>
               <a href="#" className="nav-link">Accessories</a>
               <a href="#" className="nav-link">Sale</a>
               <a href="#" className="nav-link">About</a>
