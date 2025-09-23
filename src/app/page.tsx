@@ -86,14 +86,14 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="hero-section sticky top-0 z-40">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-2">
+          <div className="flex items-center justify-between py-1">
             {/* Logo */}
-            <div className="text-lg font-bold text-white">
+            <div className="text-sm font-bold text-white">
               WAVE RIDERS
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-3">
               <a href="/products" className="nav-link">Boards</a>
               <a href="/wetsuits" className="nav-link">Wetsuits</a>
               <a href="#" className="nav-link">Accessories</a>
@@ -108,13 +108,13 @@ export default function HomePage() {
                 <input
                   type="text"
                   placeholder="Search..."
-                  className="bg-transparent text-white placeholder-white/70 outline-none text-xs w-24"
+                  className="bg-transparent text-white placeholder-white/70 outline-none text-xs w-20"
                 />
               </div>
               <button className="relative text-white hover:text-sand-light">
-                <ShoppingCart className="w-5 h-5" />
+                <ShoppingCart className="w-4 h-4" />
                 {cart.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-coral-accent text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-coral-accent text-white rounded-full text-xs w-4 h-4 flex items-center justify-center">
                     {cart.length}
                   </span>
                 )}
@@ -123,7 +123,7 @@ export default function HomePage() {
                 className="md:hidden text-white"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
-                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
               </button>
             </div>
           </div>
@@ -131,8 +131,8 @@ export default function HomePage() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-black/90 py-2">
-            <div className="container mx-auto px-4 space-y-2">
+          <div className="md:hidden bg-black/90 py-1">
+            <div className="container mx-auto px-4 space-y-1">
               <a href="/products" className="block nav-link py-1">Boards</a>
               <a href="/wetsuits" className="block nav-link py-1">Wetsuits</a>
               <a href="#" className="block nav-link py-1">Accessories</a>
